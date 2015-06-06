@@ -1,0 +1,12 @@
+namespace :assets do
+  task :precompile do
+    sh "middleman build"
+  end
+end
+
+namespace :app do
+  task :deploy do
+    sh "middleman build"
+    sh "rsync -avz build/ user@host:/path/to/catalog/to/sync/code"
+  end
+end

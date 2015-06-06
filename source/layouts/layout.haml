@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    / Always force latest IE rendering engine or request Chrome Frame
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    / Use title if it's in the page YAML frontmatter
+    %title= current_page.data.title || "Dronov dot net"
+    = stylesheet_link_tag "normalize", "foundation"
+    = javascript_include_tag  "modernizr"
+  .row
+    .large-12.columns
+      .nav-bar.right
+        %ul.button-group
+          %a.button{:href => "contacts.html"} Contacts
+      %h2= link_to "Dronov.net", "/"
+      %hr/
+  %body{:class => page_classes}
+  .row
+    .large-9.columns{:role => "content"}
+      = yield
+    - if current_page.path == "index.html"
+      %aside.large-3.columns
+        .panel
+          %h5 Tags
+          %ul.side-nav
+            - blog.tags.each do |tag, articles|
+              %li
+                %a= "#{tag} (#{articles.count})"
+%footer.row
+  .large-12.columns
+    %hr/
+    .row
+      .large-6.columns
+        %p
+          %small Dronov.net 2010-2015. Built with Middleman && Vim. Powered by FreeBSD
