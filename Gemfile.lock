@@ -123,6 +123,3 @@ DEPENDENCIES
   middleman (~> 3.3.12)
   middleman-blog (~> 3.5.3)
   rake
-
-BUNDLED WITH
-   1.10.3
