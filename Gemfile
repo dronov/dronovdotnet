@@ -2,12 +2,14 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "middleman", "~> 3.3.12"
+gem "middleman", "~> 3.4"
 gem "middleman-blog", "~> 3.5.3"
+gem "middleman-core"
 gem "haml"
 gem "rake"
 gem "rb-inotify"
 gem "therubyracer"
+gem 'middleman-google-analytics', '~> 2.1'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
