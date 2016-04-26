@@ -1,7 +1,7 @@
 ---
 title: Lean poker
 date: 2016-04-26 10:15 UTC
-tags: ruby, lean poker, events
+tags: ruby, lean_poker, events
 ---
 
 Относительно недавно до России дошло интересное мероприятие, совмещающее в себе
