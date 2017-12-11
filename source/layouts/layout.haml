@@ -13,26 +13,44 @@
       .nav-bar.right
         %ul.button-group
           %a.button{:href => "/about.html"} About me
-          %a.button{:href => "/contacts.html"} Contacts
+          %a.button{:href => "/contacts.html"} Contactss
       %h2= link_to "Dronov.net", "/"
       %hr/
   %body{:class => page_classes}
   .row
-    .large-9.columns{:role => "content"}
-      = yield
     - if current_page.path == "index.html"
-      %aside.large-3.columns
-        .panel
-          %h5 Tags
-          %ul.side-nav
-            - blog.tags.each do |tag, articles|
-              %li
-                %a{href: "/tags/#{tag}.html"}= "#{tag} (#{articles.count})"
+      .large-9.columns{:role => "content"}
+        = yield
+        %aside.large-3.columns
+          .panel
+            %h5 Tags
+            %ul.side-nav
+              - blog.tags.each do |tag, articles|
+                %li
+                  %a{href: "/tags/#{tag}.html"}= "#{tag} (#{articles.count})"
+    - else 
+      = yield
+
+      #disqus_thread
+      :javascript
+        var disqus_config = function () {
+        this.page.url = current_page.path;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = current_page.identifier; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+          (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://dronov-net.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+      %noscript
+        Please enable JavaScript to view the
+        %a{:href => "https://disqus.com/?ref_noscript"} comments powered by Disqus.
 %footer.row
   .large-12.columns
     %hr/
     .row
       .large-6.columns
         %p
-          %small Dronov.net 2010-2015. Built with Middleman && Vim. Powered by FreeBSD
+          %small Dronov.net 2010-2017. Built with Middleman && Vim. Powered by FreeBSD
 = google_analytics_tag
