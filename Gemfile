@@ -10,6 +10,7 @@ gem "rake"
 gem "rb-inotify"
 gem "therubyracer"
 gem 'middleman-google-analytics', '~> 2.1'
+gem 'json', '1.8.5'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
