@@ -1,7 +1,7 @@
 ---
 title: Cloud oscilloscope update
 date: 2017-12-01 11:30 UTC
-tags:
+tags: open_iot_challenge, cloud_oscilloscope
 ---
 
 Hi there! 
@@ -14,7 +14,7 @@ A little demonstration using oscilloscope to get signal from the sound at youtub
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qSb3a68M0-I" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
-Right now we're continuyng work on qt program, debugging, etc. We made a stable job of oscilloscope for over 11 minutes without lockups :D We know that the problem
+Right now we're going to continue work on qt program, debugging, etc. We made a stable job of oscilloscope for over 11 minutes without lockups :D We know that the problem
 located with our program and if fails with *zone_watermark_ok* error. 
 
 We participate in Eclipse OPEN IoT Challenge, and this post is another addition to our proposal. 
