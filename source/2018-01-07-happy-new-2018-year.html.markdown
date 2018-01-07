@@ -1,0 +1,23 @@
+---
+title: Happy New 2018 Year! 
+date: 2018-01-07 17:15 UTC
+tags: open_iot_challenge, cloud_oscilloscope, cloud_oscilloscope_team
+---
+
+Hi everyone! 
+
+2018 has recently started and the New Year holydays is ending in Russia. Today we celebrate Orthodox Christmas. At this joyous time of year, we are grateful for our work with you and be a part of great community. We wish you abundance, happiness, and peace in a new year filled with hope! 
+
+I would like to take an opportunity and introduce our team: 
+
+![current team](http://dronov.net/images/osc_team.jpg)
+
+From right to left:
+
+* Dmitriy Chernyatev. He programs backend and web-admin of Cloud Oscilloscope service. 
+* Mikhail Dronov. This is me :) I work with Linux on Orange Pi, also I help Dmitriy with backend and write some articles here at dronov.net
+* Dmitriy Dmitrakov. He programs a QT-application displayed on SPI-display. 
+* Andrey Ionov. He is our lead engineer, and he makes all engineering part of Cloud Oscilloscope including electronics, schematics and a lot of other things.
+* Evgeniy Nenilin. He also works on QT-application. 
+
+Best wishes! 
