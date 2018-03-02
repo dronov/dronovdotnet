@@ -12,7 +12,7 @@ I would like to take an opportunity and introduce our team:
 
 ![current team](http://dronov.net/images/osc_team.jpg)
 
-From right to left:
+From left to right:
 
 * Dmitriy Chernyatev. He programs backend and web-admin of Cloud Oscilloscope service. 
 * Mikhail Dronov. This is me :) I work with Linux on Orange Pi, also I help Dmitriy with backend and write some articles here at dronov.net
