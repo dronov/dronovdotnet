@@ -21,7 +21,7 @@ of wrong work of device. Oscilloscope can help us to recognize the problem and s
 It is okay when your team located in one place. But when you have a remote team, you can't easily show your oscillograms to other members. 
 Yes, you can make a video and upload it to YouTube, but doing it every time is very embarassing (checked by us). 
 
-That's why we decided to build no only the o-scope.  
+That's why we decided to build not only the o-scope.  
 
 ![1](http://dronov.net/images/osc/3.png)
 
@@ -39,7 +39,7 @@ Making o-scope with battery can help to bring it on the road and check any devic
 We tried to use cheap components as possible. That's why we've chosen an Orange Pi Zero as a main supported board. You can easily get it from Desktop, 
 and many of onboard features supported in Armbian Linux. 
 
-We wrote a qt-application that should be run on oscilloscope.
+We wrote a [qt-application](https://gitlab.com/cloud-oscilloscope/qtloscope) that should be run on oscilloscope.
 
 Here it is a probable PCB of ADC-shield connected with Orange Pi Zero (not fully tested). You can find all components and build scheme [here](http://dronov.net/2018/03/13/build-scheme.html).
 
@@ -76,15 +76,43 @@ Let's make similar actions with corrupted Arduino:
 
 ![corrupted data](https://media.giphy.com/media/nEMIMhWm76FdG8ZSBr/giphy.gif)
 
-That is screenshot with oscillogram from corrupted Arduino. Click [here](http://oscilloscope.cloud/pastes/mvqpgvirqentue-mgmokzq) again.
+This is screenshot with oscillogram from corrupted Arduino. Click [here](http://oscilloscope.cloud/pastes/mvqpgvirqentue-mgmokzq) again.
 
 ![oscillogram](http://dl4.joxi.net/drive/2018/03/15/0010/1401/693625/25/b93073164b.png)
 
-Yeah! It works! 
+At the ["My diffs"](http://oscilloscope.cloud/raw_diffs) section you can choose these oscillograms and make a graph like a diff, check out where things went bad.
+
+![diff](http://dl4.joxi.net/drive/2018/03/15/0010/1401/693625/25/fa33f02654.png)
+
+
+Yeah! It works! Now you can share oscillograms with remote colleagues.  
 
 ![good job](https://i.imgflip.com/26fugw.gif)
 
 ![1](http://dronov.net/images/osc/7.png)
 
+This Open IoT Challenge was a great motivation for us. We built one working prototype of our service. It is ready to use by us, but we need 
+to make a new refactoring of PCB, code. 
+
+We're working on Cloud Oscilloscope in our free time doesn't connected with our work. So we don't have a lot of free time. That means 
+that time of making new features will be amazingly unpredictable. More of that, with little community of five persons you can't truly say does 
+your feature need to others. 
+
+So, the first lesson is to concentrate on solving real problems. You can make a feature very fast, get positive feedback and make refactoring 
+later. In our case it works, we have some feature that not realized in this challenge. Some of features looks strange after some months, for example. 
+
+Second lesson, you should build a community near your project as soon as possible. This community may consist from nearest people, but you 
+have to show them results of your work to get a feedback. More feedback, more knowledge about your project, more useful changes.  
+
+Third lesson, throw away your fear and just do your work. Some of features we made without solid knowledge of usefulness. For example,
+when Andrey had started to design a schematics of PCB he hadn't know exactly the result and tried to make most simple solution. And it works! 
 
 ![1](http://dronov.net/images/osc/8.png)
+
+Thank you that you were with us all this time! But the real adventure has started recently. We don't want to stop work on Cloud Oscilloscope. We hope to build a great community of engineers, programmers, radio-fans and other people.
+
+And, of course, thank you Roxanne and Benjamin! You are amazing! 
+
+Stay in touch! 
+
+[http://oscilloscope.cloud/](http://oscilloscope.cloud)
