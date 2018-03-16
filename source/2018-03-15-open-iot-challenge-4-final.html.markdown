@@ -36,7 +36,7 @@ Making o-scope with battery can help to bring it on the road and check any devic
 
 ![1](http://dronov.net/images/osc/4.png)
 
-We tried to use cheap components as possible. That's why we've chosen an Orange Pi Zero as a main supported board. You can easily get it from Desktop, 
+We tried to use cheap components as possible. That's why we've chosen an Orange Pi Zero as a main supported board. You can easily get it from Aliexpress, 
 and many of onboard features supported in Armbian Linux. 
 
 We wrote a [qt-application](https://gitlab.com/cloud-oscilloscope/qtloscope) that should be run on oscilloscope.
@@ -82,7 +82,7 @@ This is screenshot with oscillogram from corrupted Arduino. Click [here](http://
 
 At the ["My diffs"](http://oscilloscope.cloud/raw_diffs) section you can choose these oscillograms and make a graph like a diff, check out where things went bad.
 
-![diff](http://dl4.joxi.net/drive/2018/03/15/0010/1401/693625/25/fa33f02654.png)
+![diff](http://joxi.ru/V2VKGdBfx3a0oA.png)
 
 
 Yeah! It works! Now you can share oscillograms with remote colleagues.  
@@ -106,6 +106,8 @@ have to show them results of your work to get a feedback. More feedback, more kn
 
 Third lesson, throw away your fear and just do your work. Some of features we made without solid knowledge of usefulness. For example,
 when Andrey had started to design a schematics of PCB he hadn't know exactly the result and tried to make most simple solution. And it works! 
+
+Don't give up and get things done!
 
 ![1](http://dronov.net/images/osc/8.png)
 

@@ -51,3 +51,9 @@ If the output of the button on the Board is not pulled up (pull up) resistor, yo
 ![encoder patch](http://dronov.net/images/encoder-patch.jpg)
 
 This is a first prototype of Cloud Oscilloscope so it contains a little count of bugs :) Don't afraid of this, we all are working to make a stable device. 
+
+### Update
+
+development version of ADC-shield PCB
+
+![pcb](http://dronov.net/images/osc/oscill.jpg)
