@@ -23,7 +23,7 @@ Main components:
 
 
 Use this scheme to build ADC-shield: 
-[<img src="http://dronov.net/images/oscilloscope.jpg">](http://dronov.net/images/oscilloscope.jpg)
+[<img src="https://dronov.net/images/oscilloscope.jpg">](https://dronov.net/images/oscilloscope.jpg)
 
 Components for ADC-shield:
 
@@ -48,7 +48,7 @@ Components for ADC-shield:
 
 If the output of the button on the Board is not pulled up (pull up) resistor, you need to add a 10 kOm resistor: 
 
-![encoder patch](http://dronov.net/images/encoder-patch.jpg)
+![encoder patch](https://dronov.net/images/encoder-patch.jpg)
 
 This is a first prototype of Cloud Oscilloscope so it contains a little count of bugs :) Don't afraid of this, we all are working to make a stable device. 
 
@@ -56,4 +56,4 @@ This is a first prototype of Cloud Oscilloscope so it contains a little count of
 
 development version of ADC-shield PCB
 
-![pcb](http://dronov.net/images/osc/oscill.jpg)
+![pcb](https://dronov.net/images/osc/oscill.jpg)

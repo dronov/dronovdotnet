@@ -4,16 +4,16 @@ date: 2018-03-15 10:41 UTC
 tags: open_iot_challenge, cloud_oscilloscope
 ---
 
-![1](http://dronov.net/images/osc/1.png)
+![1](https://dronov.net/images/osc/1.png)
 
 ### Hello! 
 
 Welcome to our journey to Open IoT Challenge by Eclipse! Last December our proposal was chosen 
 from 70 proposal to participate. Also we've got a promocode for electronics and started to work.
 
-Our project is Cloud Osciloscope. [Here](http://dronov.net/2017/11/17/we-make-an-open-source-cloud-oscilloscope.html) you can read a full history. 
+Our project is Cloud Osciloscope. [Here](https://dronov.net/2017/11/17/we-make-an-open-source-cloud-oscilloscope.html) you can read a full history. 
 
-![2](http://dronov.net/images/osc/2.png)
+![2](https://dronov.net/images/osc/2.png)
 
 Working with embedded devices we need to use oscilloscope to check what's going wrong in corrupted device. We don't exactly know the actual reason 
 of wrong work of device. Oscilloscope can help us to recognize the problem and see the packet sended for example from cpu, uart of other interface.
@@ -23,7 +23,7 @@ Yes, you can make a video and upload it to YouTube, but doing it every time is v
 
 That's why we decided to build not only the o-scope.  
 
-![1](http://dronov.net/images/osc/3.png)
+![1](https://dronov.net/images/osc/3.png)
 
 We think that cloud o-scope could be useful for DIY. Many professional o-scopes have a big cost and better equipment. But for usual application
 no need to use very accurate components. 
@@ -34,19 +34,19 @@ it is a good opportunity to get an oscilloscope like in University/College.
 Also we think about application at radio industry between engineers. In Russia radio is very popular. Many people like to build radio receiver by hands and speak with them.
 Making o-scope with battery can help to bring it on the road and check any device.  
 
-![1](http://dronov.net/images/osc/4.png)
+![1](https://dronov.net/images/osc/4.png)
 
 We tried to use cheap components as possible. That's why we've chosen an Orange Pi Zero as a main supported board. You can easily get it from Aliexpress, 
 and many of onboard features supported in Armbian Linux. 
 
 We wrote a [qt-application](https://gitlab.com/cloud-oscilloscope/qtloscope) that should be run on oscilloscope.
 
-Here it is a probable PCB of ADC-shield connected with Orange Pi Zero (not fully tested). You can find all components and build scheme [here](http://dronov.net/2018/03/13/build-scheme.html).
+Here it is a probable PCB of ADC-shield connected with Orange Pi Zero (not fully tested). You can find all components and build scheme [here](https://dronov.net/2018/03/13/build-scheme.html).
 
-![pcb](http://dronov.net/images/osc/oscill.jpg)
+![pcb](https://dronov.net/images/osc/oscill.jpg)
 
-![1](http://dronov.net/images/osc/5.png)
-![1](http://dronov.net/images/osc/6.png)
+![1](https://dronov.net/images/osc/5.png)
+![1](https://dronov.net/images/osc/6.png)
 
 Imagine that you have two Arduino Pro micro with equal firmware: one is working, second not. You want to discover what's going on corrupted device and decide to use cloud oscilloscope. 
 
@@ -89,7 +89,7 @@ Yeah! It works! Now you can share oscillograms with remote colleagues.
 
 ![good job](https://i.imgflip.com/26fugw.gif)
 
-![1](http://dronov.net/images/osc/7.png)
+![1](https://dronov.net/images/osc/7.png)
 
 This Open IoT Challenge was a great motivation for us. We built one working prototype of our service. It is ready to use by us, but we need 
 to make a new refactoring of PCB, code. 
@@ -109,7 +109,7 @@ when Andrey had started to design a schematics of PCB he hadn't know exactly the
 
 Don't give up and get things done!
 
-![1](http://dronov.net/images/osc/8.png)
+![1](https://dronov.net/images/osc/8.png)
 
 Thank you that you were with us all this time! But the real adventure has started recently. We don't want to stop work on Cloud Oscilloscope. We hope to build a great community of engineers, programmers, radio-fans and other people.
 

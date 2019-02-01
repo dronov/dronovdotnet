@@ -27,11 +27,11 @@ Also the Cloud Oscilloscope could be useful to make an experiments in developmen
 
 We built a device with Orange Pi Zero and ADC. It already includes WiFi to connect via MQTT with server. We’re using a cheap SPI screen from Raspberry Pi and are able to print oscillogram in realtime using framebuffer directly without X server. We will add an opportunity to setup WiFi and other settings later. Right now it looks like:
 
-![1st photo](http://dronov.net/images/IMG_0063.JPG)
+![1st photo](https://dronov.net/images/IMG_0063.JPG)
 *Yeah, it is the wood case and it lived with us from the Hardware Hackathon :)*
 
 
-![1st photo](http://dronov.net/images/IMG_0064.JPG)
+![1st photo](https://dronov.net/images/IMG_0064.JPG)
 *Our working prototype of Cloud Oscilloscope shows his entrails*
 
 ### What’s next?

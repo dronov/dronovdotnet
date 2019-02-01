@@ -9,7 +9,7 @@ Hello!
 We're working on a backend for our Cloud Oscilloscope project. On the last meetings we decided 
 to use common technologies for IoT to connect our device with backend. 
 
-![architecture](http://dronov.net/images/arch.png)
+![architecture](https://dronov.net/images/arch.png)
 
 #### MQTT
 
