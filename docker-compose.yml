@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    command: bundle exec middleman server --port 8080
+    volumes:
+      - .:/blog/dronovdotnet
+      - bundler_gems:/usr/local/bundle/
+    ports:
+      - "8080:8080"
+volumes:
+    bundler_gems:
