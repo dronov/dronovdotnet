@@ -3,8 +3,6 @@ title: Ужасный, ужасный Terraform
 date: 2024-02-21 12:20 UTC
 tags: cloud_oscilloscope
 ---
-## Ужасный, ужасный Terraform
-
 <p align="center">
     <img src="/images/terraform-the-terrible.png">
 </p>
