@@ -1,50 +1,68 @@
 !!!
-%html
+%html.no-js{:dir => "ltr", :lang => "en"}
   %head
-    %meta{charset: "utf-8"}/
-    / Always force latest IE rendering engine or request Chrome Frame
-    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
-    / Use title if it's in the page YAML frontmatter
-    %title= current_page.data.title || "Dronov dot net"
-    = stylesheet_link_tag "normalize", "foundation"
-    = javascript_include_tag  "modernizr"
-  .row
-    .large-12.columns
-      .nav-bar.right
-        %ul.button-group
-          %a.button{ href: '/about.html' } About me
-          %a.button{ href: '/contacts.html' } Contacts
-      %h2= link_to 'Dronov.net', '/'
-      %hr/
-  %body{ class: page_classes }
-  .row
-    - if current_page.path == 'index.html'
-      .large-9.columns{ role: 'content' }
-        = yield
-    - else
-      - unless current_article.nil?
-        %h2= current_article.title
-      = yield
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Foundation for Sites
+    %link{:href => "/stylesheets/foundation.css", :rel => "stylesheet"}/
+    %link{:href => "/stylesheets/app.css", :rel => "stylesheet"}/
+  %body
+    .grid-container
+      .grid-x.grid-padding-x
+      .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "example-animated-menu"}
+        %button.menu-icon{"data-toggle" => "", :type => "button"}
+        .title-bar-title Dronov.net
+      #example-animated-menu.top-bar{"data-animate" => "hinge-in-from-top spin-out"}
+        .top-bar-left
+          %ul.dropdown.menu{"data-dropdown-menu" => ""}
+            %li.menu-text Dronov.net
+            %li
+              %a{ href: '/index.html' } Articles
+            %li
+              %a{ href: '/about.html' } About
+            %li
+              %a{ href: '/contacts.html' } Contacts
+      .grid-x.grid-padding-x
+        .large-12.medium-12.cell
+        - if current_page.path == 'index.html'
+          .large-12.medium-12.cell
+            .large-9.cell
+              = yield
+        - else
+          .large-12.medium-12.cell
+            .large-8.cell
+              - unless current_article.nil?
+                %h2= current_article.title
+              = yield
 
-      #disqus_thread
-      :javascript
-        var disqus_config = function () {
-        this.page.url = current_page.path;
-        this.page.identifier = current_page.identifier;
-        };
-          (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://dronov-net.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-      %noscript
-        Please enable JavaScript to view the
-        %a{ href: 'https://disqus.com/?ref_noscript' } comments powered by Disqus.
-%footer.row
-  .large-12.columns
-    %hr/
-    .row
-      .large-6.columns
-        %p
-          %small Dronov.net 2010-2024. Built with Middleman && Vim/NeoVim/vscodium. Powered by Debian
+              #disqus_thread
+              :javascript
+                var disqus_config = function () {
+                this.page.url = current_page.path;
+                this.page.identifier = current_page.identifier;
+                };
+                  (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://dronov-net.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                  })();
+              %noscript
+                Please enable JavaScript to view the
+                %a{ href: 'https://disqus.com/?ref_noscript' } comments powered by Disqus.
+      .grid-x.grid-padding-x
+        %footer.row
+          .large-12.medium-12.cell
+            %hr/
+            .row
+              .large-.columns
+                %p
+                  %small Dronov.net 2010-2024. Built with Middleman && Vim/NeoVim/vscodium. Powered by Debian
+
+
+    %script{:src => "/javascripts/vendor/jquery.js"}
+    %script{:src => "/javascripts/vendor/what-input.js"}
+    %script{:src => "/javascripts/vendor/foundation.js"}
+    %script{:src => "/javascripts/app.js"}
