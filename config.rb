@@ -6,17 +6,6 @@ activate :blog do |blog|
   blog.calendar_template = 'calendar.html'
 end
 
-activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-76956340-1'
-  ga.anonymize_ip = false
-  ga.domain_name = 'dronov.net'
-  ga.allow_linker = false
-  ga.enhanced_link_attribution = false
-  ga.debug = false
-  ga.development = true
-  ga.minify = false
-end
-
 page '/feed.xml', layout: false
 
 set :css_dir, 'stylesheets'

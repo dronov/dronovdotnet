@@ -1,16 +1,10 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem "middleman", "~> 3.4"
-gem "middleman-blog", "~> 3.5.3"
-gem "middleman-core"
-gem "haml"
-gem "rake"
-gem "rb-inotify"
-gem "therubyracer"
-gem 'middleman-google-analytics', '~> 2.1'
-gem 'json', '1.8.5'
-
-# For feed.xml.builder
+gem 'middleman', '~> 4.5'
+gem 'middleman-blog'
+gem 'nokogiri'
+gem 'middleman-autoprefixer', '~> 3.0'
+gem 'terser', '~> 1.1'
+gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby, :x64_mingw]
+gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw, :x64_mingw]
 gem "builder", "~> 3.0"
