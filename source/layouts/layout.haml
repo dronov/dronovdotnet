@@ -22,7 +22,8 @@
       .large-9.columns{ role: 'content' }
         = yield
     - else
-      %h2= current_article.title
+      - if !current_article.nil?
+        %h2= current_article.title
       = yield
 
       #disqus_thread
