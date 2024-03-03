@@ -37,7 +37,8 @@
             .large-8.cell
               %br
               - unless current_article.nil?
-                %h2= current_article.title
+                %h3 
+                  %b= current_article.title
               = yield
 
               #disqus_thread
