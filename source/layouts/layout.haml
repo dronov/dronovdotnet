@@ -6,6 +6,7 @@
     %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title= current_page.data.title || "Dronov dot net"
+    %link{:href => "http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/stylesheets/foundation.css", :rel => "stylesheet"}/
     %link{:href => "/stylesheets/app.css", :rel => "stylesheet"}/
   %body
@@ -28,11 +29,13 @@
         .large-12.medium-12.cell
         - if current_page.path == 'index.html'
           .large-12.medium-12.cell
+            %br
             .large-9.cell
               = yield
         - else
           .large-12.medium-12.cell
             .large-8.cell
+              %br
               - unless current_article.nil?
                 %h2= current_article.title
               = yield
