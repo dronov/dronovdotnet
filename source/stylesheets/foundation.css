@@ -2896,7 +2896,7 @@ td {
 
 p {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
 }
@@ -3035,7 +3035,7 @@ dl {
 }
 
 li {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 ul {
