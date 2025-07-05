@@ -7,80 +7,71 @@
     %title= current_page.data.title || "Dronov dot net"
     %link{ href: "http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic", rel: "stylesheet" }
     %link{ href: "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css", rel: "stylesheet" }
+    %link{ href: "/stylesheets/app.css", rel: "stylesheet" }
 
   %body
-    .container
-      %nav.navbar{ role: "navigation", "aria-label" => "main navigation" }
+
+    / Navbar
+    %nav.navbar.is-light{ role: "navigation", "aria-label" => "main navigation" }
+      .container
         .navbar-brand
           %a.navbar-item{ href: "/" }
             %strong Dronov.net
-          %a.navbar-burger{ role: "button", "aria-label" => "menu", "aria-expanded" => "false", "data-target" => "navbarBasicExample" }
-            %span{ "aria-hidden" => "true" }
+          %a.navbar-burger.burger{ role: "button", "aria-label" => "menu", "aria-expanded" => "false", "data-target" => "navbarMenu" }
             %span{ "aria-hidden" => "true" }
             %span{ "aria-hidden" => "true" }
             %span{ "aria-hidden" => "true" }
 
-        #navbarBasicExample.navbar-menu
+        #navbarMenu.navbar-menu
           .navbar-start
             %a.navbar-item{ href: "/index.html" } Articles
             %a.navbar-item{ href: "/about.html" } About
             %a.navbar-item{ href: "/contacts.html" } Contacts
 
-          .navbar-end
-
-
-      .section
-        .columns
-          .column
+    / Main Content
+    %main.section
+      .container
+        .columns.is-centered
+          .column.is-8
             - if current_page.path == 'index.html'
-              .column.is-10-desktop.is-10-widescreen.is-10-fullhd
+              .article-list
                 = yield
             - else
-              .column.is-10-desktop.is-10-widescreen.is-10-fullhd
-                - unless current_article.nil?
-                  %h3.title.is-4
-                    = current_article.title
-                .content
-                  = yield
+              - unless current_article.nil?
+                %h2.title.is-3= current_article.title
+                %p.has-text-grey-light= current_article.date if current_article.date
 
-                #disqus_thread
-                :javascript
-                  var disqus_config = function () {
-                    this.page.url = current_page.path;
-                    this.page.identifier = current_page.identifier;
-                  };
-                  (function() {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://dronov-net.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                  })();
-                %noscript
-                  Please enable JavaScript to view the
-                  %a{ href: 'https://disqus.com/?ref_noscript' } comments powered by Disqus.
+              .content
+                = yield
 
-      %footer.footer
-        .content.has-text-centered
-          Dronov.net 2010–2025. Built with Middleman. Powered by Arch Linux
+              #disqus_thread
+              :javascript
+                var disqus_config = function () {
+                  this.page.url = current_page.path;
+                  this.page.identifier = current_page.identifier;
+                };
+                (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = 'https://dronov-net.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                })();
+              %noscript
+                Please enable JavaScript to view the
+                %a{ href: 'https://disqus.com/?ref_noscript' } comments powered by Disqus.
+
+    / Footer
+    %footer.footer
+      .content.has-text-centered
+        Dronov.net 2010–2025. Built with Middleman. Powered by Arch Linux
 
     :javascript
       document.addEventListener('DOMContentLoaded', () => {
         const burger = document.querySelector('.navbar-burger');
-        const menu = document.getElementById('navbarMenu');
-        if (burger && menu) {
-          burger.addEventListener('click', () => {
-            burger.classList.toggle('is-active');
-            menu.classList.toggle('is-active');
-          });
-        }
-      });
-      document.addEventListener('DOMContentLoaded', () => {
-        const burger = document.querySelector('.navbar-burger');
-        const menu = document.getElementById('navbarBasicExample');
-        if (burger && menu) {
-          burger.addEventListener('click', () => {
-            burger.classList.toggle('is-active');
-            menu.classList.toggle('is-active');
-          });
-        }
+        const menu = document.getElementById(burger.dataset.target);
+
+        burger?.addEventListener('click', () => {
+          burger.classList.toggle('is-active');
+          menu.classList.toggle('is-active');
+        });
       });

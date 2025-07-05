@@ -1,1 +1,56 @@
-$sans-serif: 'Oxygen', $helvetica;
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+}
+
+.box {
+    background-color: #fff;
+    color: #333;
+}
+
+footer.footer {
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 1rem 0;
+}
+
+footer.footer a {
+    color: #ccc;
+}
+
+.navbar {
+    background-color: #c5aa6a; /* уже у тебя стоит — мягкий коричневатый */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-item {
+    color: #333;
+}
+
+.navbar .navbar-item:hover {
+    background-color: #f0f0f0;
+}
+
+.section.full-width {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 👉 стиль списка статей на главной */
+.article-list {
+    font-size: 1.25rem; /* увеличим на ~25% */
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.article-list a {
+    color: #5a4e3c; /* мягкий коричневато-серый, гармонирует с navbar */
+    text-decoration: none;
+}
+
+.article-list a:hover {
+    color: #000; /* или чуть темнее при наведении */
+    text-decoration: underline;
+}
