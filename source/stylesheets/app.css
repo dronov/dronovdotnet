@@ -54,3 +54,7 @@ footer.footer a {
     color: #000; /* или чуть темнее при наведении */
     text-decoration: underline;
 }
+
+.navbar-burger span {
+    background-color: #333 !important;
+}
