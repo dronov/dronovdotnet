@@ -58,3 +58,14 @@ footer.footer a {
 .navbar-burger span {
     background-color: #333 !important;
 }
+
+/* глобальные ссылки */
+a {
+    color: #5a4e3c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: underline;
+}
