@@ -1,0 +1,16 @@
+service: dronovdotnet
+image: dronov/dronovdotnet
+
+servers:
+  web:
+    hosts:
+      - 94.103.88.150
+
+builder:
+  arch: amd64
+
+registry:
+  server: ghcr.io
+  username: dronov
+  password:
+    - KAMAL_REGISTRY_PASSWORD

@@ -1,15 +1,26 @@
-FROM ruby:3.3.0
+FROM ruby:3.3.0-slim AS builder
 
-RUN mkdir -p /blog/dronovdotnet
-ADD . /blog/dronovdotnet
-
-WORKDIR /blog/dronovdotnet
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+    build-essential \
+    nodejs \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN gem install bundler:2.5.4
+
+WORKDIR /app
+
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
-RUN apt update -y
-RUN apt install -y nodejs
 
-EXPOSE 8080
+COPY . .
+RUN bundle exec middleman build
 
-CMD bundle exec middleman server --port 8080
+FROM nginx:alpine
+
+COPY --from=builder /app/build /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 8088
+
+CMD ["nginx", "-g", "daemon off;"]
