@@ -18,9 +18,9 @@ spec:
         - name: regcred
       containers:
         - name: dronovdotnet
-          image: ghcr.io/dronov/dronovdotnet:latest
+          image: ghcr.io/dronov/dronovdotnet:v0.0.2
           ports:
-            - containerPort: 8080
+            - containerPort: 80
 
 ---
 apiVersion: v1
@@ -35,5 +35,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80
   type: ClusterIP
