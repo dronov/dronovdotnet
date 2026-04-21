@@ -1,71 +1,107 @@
-body {
-    background-color: #f4f4f9;
-    color: #333;
-    font-family: "Roboto", sans-serif;
+.article-link {
+  color: var(--pico-heading-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.box {
-    background-color: #fff;
-    color: #333;
+.article-link:hover {
+  color: var(--pico-primary);
+  text-decoration: underline;
 }
 
-footer.footer {
-    background-color: #f4f4f9;
-    color: #333;
-    padding: 1rem 0;
+.article-item h2 {
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
 }
 
-footer.footer a {
-    color: #ccc;
+.brand-logo {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--pico-heading-color) !important;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: opacity 0.2s ease;
 }
 
-.navbar {
-    background-color: #c5aa6a; /* уже у тебя стоит — мягкий коричневатый */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.brand-logo:hover {
+  opacity: 0.8;
 }
 
-.navbar .navbar-item {
-    color: #333;
+.nav-links a {
+  color: #7fb2f0 !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 1px solid transparent;
 }
 
-.navbar .navbar-item:hover {
-    background-color: #f0f0f0;
+.nav-links a:hover {
+  color: #a3ccff !important;
+  background: transparent;
+  border-bottom-color: #a3ccff;
 }
 
-.section.full-width {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+/* .article-list article, */
+/* .article-item { */
+/*   background: transparent !important; */
+/*   border: none !important; */
+/*   box-shadow: none !important; */
+/*   padding-left: 0 !important; */
+/*   margin-bottom: 3rem !important; */
+/* } */
+
+.article-meta time {
+  font-size: 0.7rem;
+  color: #637588;
+  text-transform: uppercase;
+  letter-spacing: 0;
 }
 
-/* 👉 стиль списка статей на главной */
-.article-list {
-    font-size: 1.25rem; /* увеличим на ~25% */
-    line-height: 1.6;
-    margin-bottom: 2rem;
+.article-meta {
+  color: var(--pico-muted-color);
+  font-size: 0.85rem;
+  margin-bottom: 0;
 }
 
-.article-list a {
-    color: #5a4e3c; /* мягкий коричневато-серый, гармонирует с navbar */
-    text-decoration: none;
+/* .article-item { */
+/*   margin-bottom: 2rem; */
+/*   padding-bottom: 1rem; */
+/*   border-bottom: 1px solid var(--pico-muted-border-color); */
+/* } */
+
+.article-list .article-item {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  margin-bottom: 0;
 }
 
-.article-list a:hover {
-    color: #000; /* или чуть темнее при наведении */
-    text-decoration: underline;
+
+/* .article-list h2 a { */
+/*   color: var(--pico-heading-color); */
+/*   text-decoration: none; */
+/* } */
+/**/
+/* .article-list h2 a:hover { */
+/*   color: var(--pico-primary); */
+/*   text-decoration: underline; */
+/* } */
+/**/
+/* Обнуляем отступы между заголовком и датой */
+.article-list h2 {
+  color: var(--pico-heading-color);
+  margin-bottom: 0 !important;
 }
 
-.navbar-burger span {
-    background-color: #333 !important;
+.article-list .article-meta {
+  margin-top: 0 !important;
+  /* line-height: 1.2; — можно добавить, если нужно еще плотнее */
 }
 
-/* глобальные ссылки */
-a {
-    color: #5a4e3c;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #000;
-    text-decoration: underline;
+/* Убираем "карточный" фон у статьи, если он все еще есть */
+.article-list article {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  background: transparent !important;
+  border: none !important;
 }

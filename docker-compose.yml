@@ -3,12 +3,5 @@ services:
   web:
     build:
       context: .
-    #image: ghcr.io/dronov/dronovdotnet:v0.0.1
-    command: bundle exec middleman server --port 8080
-    volumes:
-      - .:/blog/dronovdotnet
-      - bundler_gems:/usr/local/bundle/
     ports:
-      - "8080:8080"
-volumes:
-    bundler_gems:
+      - "8080:80"

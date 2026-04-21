@@ -1,81 +1,65 @@
 !!! 5
-%html.no-js{ dir: "ltr", lang: "en" }
+%html{ dir: "ltr", lang: "en" }
   %head
     %meta{ charset: "utf-8" }
     %meta{ content: "ie=edge", "http-equiv" => "x-ua-compatible" }
     %meta{ content: "width=device-width, initial-scale=1", name: "viewport" }
     %title= current_page.data.title || "Dronov dot net"
-    %link{ href: "http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic", rel: "stylesheet" }
-    %link{ href: "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css", rel: "stylesheet" }
+    
+    / Pico.css
+    %link{ href: "https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css", rel: "stylesheet" }
     %link{ href: "/stylesheets/app.css", rel: "stylesheet" }
 
   %body
-
-    / Navbar
-    %nav.navbar.is-light{ role: "navigation", "aria-label" => "main navigation" }
-      .container
-        .navbar-brand
-          %a.navbar-item{ href: "/" }
-            %strong Dronov.net
-          %a.navbar-burger.burger{ role: "button", "aria-label" => "menu", "aria-expanded" => "false", "data-target" => "navbarMenu" }
-            %span{ "aria-hidden" => "true" }
-            %span{ "aria-hidden" => "true" }
-            %span{ "aria-hidden" => "true" }
-
-        #navbarMenu.navbar-menu
-          .navbar-start
-            %a.navbar-item{ href: "/index.html" } Articles
-            %a.navbar-item{ href: "/about.html" } About
-            %a.navbar-item{ href: "/contacts.html" } Contacts
+    / Header & Navbar
+    %header.container
+      %nav
+        %ul
+          %li
+            %a.brand-logo{ href: "/" } Dronov.net
+        %ul.nav-links
+          %li
+            %a{ href: "/index.html" } Articles
+          %li
+            %a{ href: "/about.html" } About
+          %li
+            %a{ href: "/contacts.html" } Contacts
 
     / Main Content
-    %main.section
-      .container
-        .columns.is-centered
-          .column.is-8
-            - if current_page.path == 'index.html'
-              .article-list
-                = yield
-            - else
-              - unless current_article.nil?
-                %h2.title.is-3= current_article.title
-                %p.has-text-grey-light= current_article.date if current_article.date
+    %main.container
+      - if current_page.path == 'index.html'
+        .article-list
+          = yield
+      - else
+        %article
+          - unless current_article.nil?
+            %header
+              %h2= current_article.title
+              %p
+                %small= current_article.date.strftime('%b %e, %Y') if current_article.date
 
-              .content
-                = yield
+          .content
+            = yield
 
-              #disqus_thread
-              :javascript
-                var disqus_config = function () {
-                  this.page.url = current_page.path;
-                  this.page.identifier = current_page.identifier;
-                };
-                (function() {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://dronov-net.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              %noscript
-                Please enable JavaScript to view the
-                %a{ href: 'https://disqus.com/?ref_noscript' } comments powered by Disqus.
+          %footer
+            #disqus_thread
+            :javascript
+              var disqus_config = function () {
+                this.page.url = "#{current_page.path}";
+                this.page.identifier = "#{current_page.path}"; 
+              };
+              (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://dronov-net.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            %noscript
+              Please enable JavaScript to view the
+              %a{ href: 'https://disqus.com/?ref_noscript' } comments powered by Disqus.
 
     / Footer
-    %footer.footer
-      .section
-        .container
-        .columns.is-centered
-          .column.is-8
-          .content.has-text-centered
-            Dronov.net 2010–2025. Built with Middleman. Powered by Arch Linux
-
-    :javascript
-      document.addEventListener('DOMContentLoaded', () => {
-        const burger = document.querySelector('.navbar-burger');
-        const menu = document.getElementById(burger.dataset.target);
-
-        burger?.addEventListener('click', () => {
-          burger.classList.toggle('is-active');
-          menu.classList.toggle('is-active');
-        });
-      });
+    %footer.container
+      %hr
+      %small
+        Dronov.net 2010–2026. Built with Middleman. Powered by Arch Linux
