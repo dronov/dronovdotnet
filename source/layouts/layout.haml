@@ -41,23 +41,6 @@
           .content
             = yield
 
-          %footer
-            #disqus_thread
-            :javascript
-              var disqus_config = function () {
-                this.page.url = "#{current_page.path}";
-                this.page.identifier = "#{current_page.path}"; 
-              };
-              (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://dronov-net.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-              })();
-            %noscript
-              Please enable JavaScript to view the
-              %a{ href: 'https://disqus.com/?ref_noscript' } comments powered by Disqus.
-
     / Footer
     %footer.container
       %hr
