@@ -66,6 +66,10 @@
       document.title = activeTitle.textContent
     }
 
+    Array.prototype.slice.call(document.querySelectorAll('[data-i18n-' + language + ']')).forEach(function (element) {
+      element.textContent = element.getAttribute('data-i18n-' + language)
+    })
+
     Array.prototype.slice.call(document.querySelectorAll('[data-translation-menu]')).forEach(function (menu) {
       var label = menu.querySelector('[data-translation-current-label]')
       var button = menu.querySelector('[data-translation-menu-button]')

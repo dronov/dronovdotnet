@@ -19,11 +19,9 @@
             %a.brand-logo{ href: "/" } Dronov.net
         %ul.nav-links
           %li
-            %a{ href: "/index.html" } Articles
+            %a{ href: "/index.html", "data-i18n-ru" => "Статьи", "data-i18n-en" => "Articles" } Articles
           %li
-            %a{ href: "/about.html" } About
-          %li
-            %a{ href: "/contacts.html" } Contacts
+            %a{ href: "/contacts.html", "data-i18n-ru" => "Контакты", "data-i18n-en" => "Contacts" } Contacts
           - if current_article && article_translated?
             %li
               .article-language-menu{ "data-translation-menu" => true, "data-current-language" => article_default_language }

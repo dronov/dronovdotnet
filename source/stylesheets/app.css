@@ -241,13 +241,26 @@ header nav {
 
 @media (max-width: 640px) {
   header nav {
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    column-gap: 0.75rem;
+  }
+
+  .brand-logo {
+    font-size: 1.05rem;
   }
 
   .nav-links {
-    width: 100%;
-    justify-content: flex-start;
-    column-gap: 0.85rem;
+    width: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    column-gap: 0.55rem;
+    min-width: 0;
+  }
+
+  .nav-links a,
+  .article-language-button {
+    font-size: 0.82rem;
   }
 
   .nav-links li {
@@ -260,12 +273,22 @@ header nav {
 
   .article-language-button {
     max-width: 100%;
+    gap: 0.12rem;
     white-space: nowrap;
   }
 
+  .article-language-icon {
+    display: none;
+  }
+
+  .article-language-chevron svg {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+
   .article-language-dropdown {
-    right: auto;
-    left: 0;
+    right: 0;
+    left: auto;
     max-width: calc(100vw - 2rem);
   }
 }
