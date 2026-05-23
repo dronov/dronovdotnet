@@ -30,7 +30,8 @@ title = STDIN.gets&.strip.to_s
 
 abort 'Название статьи не может быть пустым' if title.empty?
 
-date = Date.today
+now = Time.now.utc
+date = now.to_date
 slug = slugify(title)
 abort 'Не удалось сделать slug из названия статьи' if slug.empty?
 
@@ -42,7 +43,7 @@ content = <<~MARKDOWN
   title: #{yaml_string(title)}
   title_ru: #{yaml_string(title)}
   title_en:
-  date: #{date.strftime('%Y-%m-%d')} 12:00 UTC
+  date: #{now.strftime('%Y-%m-%d %H:%M UTC')}
   tags:
   ---
 
