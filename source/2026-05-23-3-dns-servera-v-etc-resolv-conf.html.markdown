@@ -81,22 +81,13 @@ git show 28f540f45bbacd939bfd07f213bcad2bf730b1bf
 
 Однако, достаточно быстрый поиск даёт прояснение в рассылке [internet history](https://elists.isoc.org/pipermail/internet-history/2021-February/007004.html), где один из авторов BSD расставляет все точки над i:
 
-<pre><code>Someone pointed out to me that I did the code check-in to the source code 
-repository for UC Berkeley CSRG (BSD) in October 1985.
-Code change set MAXNS to 3.  Now someone over 35 years is questions why.
-I would say setting it to 3 has stood the test of time.
+<blockquote>
+  <p>Someone pointed out to me that I did the code check-in to the source code repository for UC Berkeley CSRG (BSD) in October 1985. Code change set MAXNS to 3. Now someone over 35 years is questions why. I would say setting it to 3 has stood the test of time.</p>
 
-MAXNS is in the resolver code, designed to be fairly light weight since it 
-lives in libC.
-If you wanted DNS caching you put a recursive caching only name server on 
-the local system that would do all the real resolution work and cache the 
-results for other DNS resolutions.
-Back in 1985 named, name server, would occasionally crash. So by setting 
-MAXNS to three would give the resolver the opportunity to try the localhost 
-name server and two backups.  Hopefully, you set the two backup nameservers 
-to ones in you LAN. Setting to nameservers across the internet would not 
-result in speedy name resolution.
-</code></pre>
+  <p>MAXNS is in the resolver code, designed to be fairly light weight since it lives in libC. If you wanted DNS caching you put a recursive caching only name server on the local system that would do all the real resolution work and cache the results for other DNS resolutions.</p>
+
+  <p>Back in 1985 named, name server, would occasionally crash. So by setting MAXNS to three would give the resolver the opportunity to try the localhost name server and two backups. Hopefully, you set the two backup nameservers to ones in you LAN. Setting to nameservers across the internet would not result in speedy name resolution.</p>
+</blockquote>
 
 За долгое время с 1985 года проблема 3 DNS серверов всплывала не раз.
 
@@ -217,22 +208,13 @@ But the roots of resolv.conf go back to the days when Linus Torvalds hadn't even
 
 However, a quick search brings up a mailing list of [internet history](https://elists.isoc.org/pipermail/internet-history/2021-February/007004.html), where one of the BSD authors clears things up:
 
-<pre><code>Someone pointed out to me that I did the code check-in to the source code 
-repository for UC Berkeley CSRG (BSD) in October 1985.
-Code change set MAXNS to 3.  Now someone over 35 years is questions why.
-I would say setting it to 3 has stood the test of time.
+<blockquote>
+  <p>Someone pointed out to me that I did the code check-in to the source code repository for UC Berkeley CSRG (BSD) in October 1985. Code change set MAXNS to 3. Now someone over 35 years is questions why. I would say setting it to 3 has stood the test of time.</p>
 
-MAXNS is in the resolver code, designed to be fairly light weight since it 
-lives in libC.
-If you wanted DNS caching you put a recursive caching only name server on 
-the local system that would do all the real resolution work and cache the 
-results for other DNS resolutions.
-Back in 1985 named, name server, would occasionally crash. So by setting 
-MAXNS to three would give the resolver the opportunity to try the localhost 
-name server and two backups.  Hopefully, you set the two backup nameservers 
-to ones in you LAN. Setting to nameservers across the internet would not 
-result in speedy name resolution.
-</code></pre>
+  <p>MAXNS is in the resolver code, designed to be fairly light weight since it lives in libC. If you wanted DNS caching you put a recursive caching only name server on the local system that would do all the real resolution work and cache the results for other DNS resolutions.</p>
+
+  <p>Back in 1985 named, name server, would occasionally crash. So by setting MAXNS to three would give the resolver the opportunity to try the localhost name server and two backups. Hopefully, you set the two backup nameservers to ones in you LAN. Setting to nameservers across the internet would not result in speedy name resolution.</p>
+</blockquote>
 
 The 3 DNS server problem has come up many times over the long time since 1985.
 
