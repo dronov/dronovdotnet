@@ -56,6 +56,11 @@
                   = current_article.title
               %p
                 %small= current_article.date.strftime('%b %e, %Y') if current_article.date
+              - if current_article.tags.any?
+                %ul.article-tags{ "aria-label" => "Article tags" }
+                  - current_article.tags.each do |tag|
+                    %li
+                      = link_to tag.tr('_', ' '), tag_path(tag)
 
           .content
             = yield

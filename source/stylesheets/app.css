@@ -75,6 +75,40 @@ header nav {
   margin-bottom: 0;
 }
 
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-tags li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-tags a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.25rem;
+  color: #61788f;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.article-tags a:hover {
+  border-color: #7f9bb8;
+  color: #7f9bb8;
+  text-decoration: none;
+}
+
 /* .article-item { */
 /*   margin-bottom: 2rem; */
 /*   padding-bottom: 1rem; */
