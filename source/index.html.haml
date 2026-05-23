@@ -1,13 +1,7 @@
 ---
 pageable: true
-per_page: 100
+per_page: 10
 ---
-
-- if paginate && num_pages > 1
-  %p
-    Page #{page_number} of #{num_pages}
-  - if prev_page
-    %p= link_to 'Previous page', prev_page
 
 - page_articles.each_with_index do |article, i|
   %article.article-item
@@ -16,6 +10,19 @@ per_page: 100
         %a.article-link{ href: article.url }= article.title
       %p.article-meta
         %time= article.date.strftime('%b %e, %Y')
-- if paginate
-  - if next_page
-    %p= link_to 'Next page', next_page
+
+- if paginate && num_pages > 1
+  %nav.pagination{ "aria-label" => "Articles pagination" }
+    %ul
+      %li
+        - if prev_page
+          = link_to 'Previous', prev_page
+        - else
+          %span Previous
+      %li
+        %span Page #{page_number} of #{num_pages}
+      %li
+        - if next_page
+          = link_to 'Next', next_page
+        - else
+          %span Next

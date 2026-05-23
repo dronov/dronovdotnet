@@ -4,6 +4,7 @@ activate :blog do |blog|
   blog.summary_separator = /(READMORE)/
   blog.tag_template = 'tag.html'
   blog.calendar_template = 'calendar.html'
+  blog.paginate = true
 end
 
 SUPPORTED_LANGUAGES = {
