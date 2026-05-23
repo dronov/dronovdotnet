@@ -28,7 +28,7 @@
 }
 
 .nav-links a {
-  color: #a3ccff !important;
+  color: #61788f !important;
   font-weight: 500;
   font-size: 0.95rem;
   transition: color 0.2s ease, border-bottom 0.2s ease;
@@ -36,9 +36,9 @@
 }
 
 .nav-links a:hover {
-  color: #a3ccff !important;
+  color: #7f9bb8 !important;
   background: transparent;
-  border-bottom-color: #a3ccff;
+  border-bottom-color: #7f9bb8;
   text-decoration: none;
 }
 
@@ -104,4 +104,110 @@
   padding-bottom: 0.5rem !important;
   background: transparent !important;
   border: none !important;
+}
+
+.article-language-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.article-language-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 1.5rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #61788f !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow: none;
+  transition: color 0.2s ease;
+}
+
+.article-language-button:hover,
+.article-language-menu[data-open="true"] .article-language-button {
+  background: transparent;
+  color: #7f9bb8 !important;
+  text-decoration: none;
+}
+
+.article-language-button:focus-visible,
+.article-language-dropdown button:focus-visible {
+  outline: 2px solid #7f9bb8;
+  outline-offset: 2px;
+}
+
+.article-language-icon {
+  display: inline-flex;
+  color: currentColor;
+}
+
+.article-language-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.article-language-chevron {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.article-language-chevron svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.article-language-menu[data-open="true"] .article-language-chevron {
+  transform: rotate(180deg);
+}
+
+.article-language-dropdown {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  z-index: 10;
+  display: grid;
+  gap: 0.15rem;
+  min-width: 4.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.35rem;
+  background: var(--pico-card-background-color);
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.28);
+}
+
+.article-language-dropdown[hidden] {
+  display: none;
+}
+
+.article-language-dropdown button {
+  width: 100%;
+  margin: 0;
+  min-height: 1.85rem;
+  padding: 0 0.6rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: #61788f;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: left;
+}
+
+.article-language-dropdown button:hover,
+.article-language-dropdown button[aria-selected="true"] {
+  background-color: rgba(97, 120, 143, 0.18);
+  color: #9eb7d1;
+}
+
+[data-translation-content][hidden],
+[data-translation-title][hidden] {
+  display: none !important;
 }

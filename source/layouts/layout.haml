@@ -1,5 +1,5 @@
 !!! 5
-%html{ dir: "ltr", lang: "en" }
+%html{ dir: "ltr", lang: article_default_language }
   %head
     %meta{ charset: "utf-8" }
     %meta{ content: "ie=edge", "http-equiv" => "x-ua-compatible" }
@@ -24,6 +24,22 @@
             %a{ href: "/about.html" } About
           %li
             %a{ href: "/contacts.html" } Contacts
+          - if current_article && article_translated?
+            %li
+              .article-language-menu{ "data-translation-menu" => true, "data-current-language" => article_default_language }
+                %button.article-language-button{ type: "button", "data-translation-menu-button" => true, "aria-label" => "Switch article language", "aria-haspopup" => "true", "aria-expanded" => "false" }
+                  %span.article-language-icon{ "aria-hidden" => "true" }
+                    %svg{ viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width" => "2", "stroke-linecap" => "round", "stroke-linejoin" => "round" }
+                      %circle{ cx: "12", cy: "12", r: "10" }
+                      %path{ d: "M2 12h20" }
+                      %path{ d: "M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" }
+                  %span{ "data-translation-current-label" => true }= article_language_options.first[1]
+                  %span.article-language-chevron{ "aria-hidden" => "true" }
+                    %svg{ viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width" => "2", "stroke-linecap" => "round", "stroke-linejoin" => "round" }
+                      %path{ d: "m6 9 6 6 6-6" }
+                .article-language-dropdown{ "data-translation-menu-list" => true, hidden: true }
+                  - article_language_options.each do |language, label|
+                    %button{ type: "button", "data-translation-menu-option" => language, "aria-selected" => language == article_default_language }= label
 
     / Main Content
     %main.container
@@ -34,7 +50,12 @@
         %article
           - unless current_article.nil?
             %header
-              %h2= current_article.title
+              %h2
+                - if article_translated?
+                  - article_language_options.each do |language, label|
+                    %span{ "data-translation-title" => language, hidden: language != article_default_language }= article_localized_title(current_article, language)
+                - else
+                  = current_article.title
               %p
                 %small= current_article.date.strftime('%b %e, %Y') if current_article.date
 
@@ -46,3 +67,4 @@
       %hr
       %small
         Dronov.net 2010–2026. Built with Middleman. Powered by Arch Linux
+    %script{ src: "/javascripts/app.js" }
