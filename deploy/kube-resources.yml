@@ -18,7 +18,7 @@ spec:
         - name: regcred
       containers:
         - name: dronovdotnet
-          image: ghcr.io/dronov/dronovdotnet:v0.4.0
+          image: ghcr.io/dronov/dronovdotnet:v0.4.1
           ports:
             - containerPort: 80
 

@@ -120,8 +120,9 @@
   document.addEventListener('DOMContentLoaded', function () {
     applyLanguage(detectedLanguage())
 
-    Array.prototype.slice.call(document.querySelectorAll('[data-translation-menu-button]')).forEach(function (button) {
-      button.addEventListener('click', function () {
+    document.addEventListener('click', function (event) {
+      var button = event.target.closest && event.target.closest('[data-translation-menu-button]')
+      if (button) {
         var menu = button.closest('[data-translation-menu]')
         if (!menu) {
           return
@@ -140,17 +141,17 @@
           list.hidden = false
           button.setAttribute('aria-expanded', 'true')
         }
-      })
-    })
 
-    Array.prototype.slice.call(document.querySelectorAll('[data-translation-menu-option]')).forEach(function (option) {
-      option.addEventListener('click', function () {
+        return
+      }
+
+      var option = event.target.closest && event.target.closest('[data-translation-menu-option]')
+      if (option) {
         applyLanguage(option.getAttribute('data-translation-menu-option'))
         closeLanguageMenus()
-      })
-    })
+        return
+      }
 
-    document.addEventListener('click', function (event) {
       if (!event.target.closest || !event.target.closest('[data-translation-menu]')) {
         closeLanguageMenus()
       }
