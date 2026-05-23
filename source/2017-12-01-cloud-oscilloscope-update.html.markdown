@@ -1,5 +1,7 @@
 ---
 title: Cloud oscilloscope update
+title_ru: "Обновление Cloud Oscilloscope"
+title_en: "Cloud Oscilloscope update"
 date: 2017-12-01 11:30 UTC
 tags: open_iot_challenge, cloud_oscilloscope
 ---

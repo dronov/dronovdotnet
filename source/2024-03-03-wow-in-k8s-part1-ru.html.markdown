@@ -1,5 +1,7 @@
 ---
 title: World of Warcraft (CMaNGOS) в k8s. Ностальгия, мотивация, планы
+title_ru: "World of Warcraft (CMaNGOS) в k8s. Ностальгия, мотивация, планы"
+title_en: "World of Warcraft (CMaNGOS) in k8s. Nostalgia, motivation, plans"
 date: 2024-03-03 14:20 UTC
 tags: cmangos, wow, k8s
 ---

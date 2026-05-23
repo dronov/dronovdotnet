@@ -1,5 +1,7 @@
 ---
 title: Happy New 2018 Year! 
+title_ru: "С Новым 2018 годом!"
+title_en: "Happy New 2018 Year!"
 date: 2018-01-07 17:15 UTC
 tags: open_iot_challenge, cloud_oscilloscope, cloud_oscilloscope_team
 ---

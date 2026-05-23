@@ -1,5 +1,7 @@
 ---
 title: История FIDO в Симбирске
+title_ru: "История FIDO в Симбирске"
+title_en: "The history of FIDO in Simbirsk"
 date: 2024-07-16 23:20 UTC
 tags: fido, Ulyanovsk, фидо, Ульяновск
 ---

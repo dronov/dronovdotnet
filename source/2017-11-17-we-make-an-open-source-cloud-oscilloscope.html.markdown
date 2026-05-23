@@ -1,5 +1,7 @@
 ---
 title: We make an open-source Cloud Oscilloscope
+title_ru: "Мы делаем open-source Cloud Oscilloscope"
+title_en: "We make an open-source Cloud Oscilloscope"
 date: 2017-11-17 10:19 UTC
 tags: open_iot_challenge, cloud_oscilloscope
 ---

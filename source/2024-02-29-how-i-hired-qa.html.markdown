@@ -1,5 +1,7 @@
 ---
 title: Как я искал hardware-тестировщика
+title_ru: "Как я искал hardware-тестировщика"
+title_en: "How I looked for a hardware tester"
 date: 2024-02-29 12:20 UTC
 tags: hiring, text
 ---

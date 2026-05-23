@@ -1,5 +1,7 @@
 ---
 title: Ядро Linux на DevOps собеседовании
+title_ru: "Ядро Linux на DevOps собеседовании"
+title_en: "The Linux kernel at a DevOps interview"
 date: 2025-06-30 13:20 UTC
 tags: linux, собеседования, cloud, devops
 ---

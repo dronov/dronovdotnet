@@ -1,5 +1,7 @@
 ---
 title: We won a first stage of Open IoT Challenge by Eclipse
+title_ru: "Мы выиграли первый этап Open IoT Challenge от Eclipse"
+title_en: "We won the first stage of Open IoT Challenge by Eclipse"
 date: 2017-12-21 11:57 UTC
 tags: open_iot_challenge, cloud_oscilloscope
 ---

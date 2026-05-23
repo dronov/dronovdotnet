@@ -7,7 +7,9 @@ per_page: 10
   %article.article-item
     %header
       %h4
-        %a.article-link{ href: article.url }= article.title
+        %a.article-link{ href: article.url }
+          - article_language_options(article).each do |language, label|
+            %span{ "data-translation-title" => language, hidden: language != page_default_language }= article_localized_title(article, language)
       %p.article-meta
         %time= article.date.strftime('%b %e, %Y')
 
@@ -16,13 +18,13 @@ per_page: 10
     %ul
       %li
         - if prev_page
-          = link_to 'Previous', prev_page
+          = link_to 'Previous', prev_page, "data-i18n-ru" => "Назад", "data-i18n-en" => "Previous"
         - else
-          %span Previous
+          %span{ "data-i18n-ru" => "Назад", "data-i18n-en" => "Previous" } Previous
       %li
-        %span Page #{page_number} of #{num_pages}
+        %span{ "data-i18n-ru" => "Страница #{page_number} из #{num_pages}", "data-i18n-en" => "Page #{page_number} of #{num_pages}" } Page #{page_number} of #{num_pages}
       %li
         - if next_page
-          = link_to 'Next', next_page
+          = link_to 'Next', next_page, "data-i18n-ru" => "Вперёд", "data-i18n-en" => "Next"
         - else
-          %span Next
+          %span{ "data-i18n-ru" => "Вперёд", "data-i18n-en" => "Next" } Next

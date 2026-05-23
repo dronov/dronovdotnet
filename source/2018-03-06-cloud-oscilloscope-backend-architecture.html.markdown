@@ -1,5 +1,7 @@
 ---
 title:  Cloud Oscilloscope backend architecture
+title_ru: "Архитектура backend Cloud Oscilloscope"
+title_en: "Cloud Oscilloscope backend architecture"
 date: 2018-03-06 11:39 UTC
 tags: open_iot_challenge, cloud_oscilloscope
 ---

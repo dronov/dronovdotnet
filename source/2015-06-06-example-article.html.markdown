@@ -1,5 +1,7 @@
 ---
 title: Hello World!
+title_ru: "Привет, мир!"
+title_en: "Hello World!"
 date: 2015-06-06
 tags: hello_world
 ---

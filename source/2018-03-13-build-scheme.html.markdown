@@ -1,5 +1,7 @@
 ---
 title: Build Cloud Oscilloscope!
+title_ru: "Собираем Cloud Oscilloscope!"
+title_en: "Build Cloud Oscilloscope!"
 date: 2018-03-13 14:04 UTC
 tags: open_iot_challenge, cloud_oscilloscope
 ---

@@ -1,5 +1,7 @@
 ---
 title: What about the Tron:Legacy?
+title_ru: "Что насчёт Tron: Legacy?"
+title_en: "What about Tron: Legacy?"
 date: 2016-03-25 23:36 UTC
 tags: cinema
 ---

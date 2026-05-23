@@ -1,5 +1,7 @@
 ---
 title: Как не облажаться на Хардатоне
+title_ru: "Как не облажаться на Хардатоне"
+title_en: "How not to mess up at Hardathon"
 date: 2017-03-13 00:22 UTC
 tags: хардатон
 ---

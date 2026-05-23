@@ -1,5 +1,7 @@
 ---
 title: The brand new front case design
+title_ru: "Новый дизайн передней панели"
+title_en: "The brand new front case design"
 date: 2018-04-03 12:20 UTC
 tags: cloud_oscilloscope
 ---

@@ -1,5 +1,7 @@
 ---
 title: Open IoT Challenge 4.0 final report 
+title_ru: "Финальный отчёт Open IoT Challenge 4.0"
+title_en: "Open IoT Challenge 4.0 final report"
 date: 2018-03-15 10:41 UTC
 tags: open_iot_challenge, cloud_oscilloscope
 ---

@@ -35,10 +35,23 @@
   }
 
   function availableLanguages() {
-    return Array.prototype.slice.call(document.querySelectorAll('[data-translation-content]'))
+    var languages = {}
+
+    Array.prototype.slice.call(document.querySelectorAll('[data-translation-content], [data-translation-title], [data-translation-menu-option]'))
       .map(function (element) {
-        return element.getAttribute('data-translation-content')
+        return element.getAttribute('data-translation-content') ||
+          element.getAttribute('data-translation-title') ||
+          element.getAttribute('data-translation-menu-option')
       })
+      .forEach(function (language) {
+        if (supportedLanguages.indexOf(language) !== -1) {
+          languages[language] = true
+        }
+      })
+
+    return supportedLanguages.filter(function (language) {
+      return languages[language]
+    })
   }
 
   function applyLanguage(language) {
@@ -61,7 +74,7 @@
       element.hidden = element.getAttribute('data-translation-title') !== language
     })
 
-    var activeTitle = document.querySelector('[data-translation-title="' + language + '"]')
+    var activeTitle = document.querySelector('[data-page-title][data-translation-title="' + language + '"]')
     if (activeTitle) {
       document.title = activeTitle.textContent
     }

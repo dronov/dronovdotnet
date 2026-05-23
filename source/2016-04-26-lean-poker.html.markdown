@@ -1,5 +1,7 @@
 ---
 title: Lean poker
+title_ru: "Lean poker"
+title_en: "Lean poker"
 date: 2016-04-26 10:15 UTC
 tags: ruby, lean_poker, events
 ---

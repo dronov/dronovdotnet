@@ -1,5 +1,7 @@
 ---
 title: Cloud oscilloscope pcb update 
+title_ru: "Обновление PCB Cloud Oscilloscope"
+title_en: "Cloud Oscilloscope PCB update"
 date: 2018-04-05 12:20 UTC
 tags: cloud_oscilloscope
 ---
