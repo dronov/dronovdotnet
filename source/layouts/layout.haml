@@ -37,7 +37,7 @@
                       %path{ d: "m6 9 6 6 6-6" }
                 .article-language-dropdown{ "data-translation-menu-list" => true, hidden: true }
                   - article_language_options.each do |language, label|
-                    %button{ type: "button", "data-translation-menu-option" => language, "aria-selected" => language == article_default_language }= label
+                    %button{ type: "button", "data-translation-menu-option" => language, "aria-selected" => (language == article_default_language).to_s }= label
 
     / Main Content
     %main.container

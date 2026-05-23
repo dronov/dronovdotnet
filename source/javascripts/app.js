@@ -110,7 +110,15 @@
     Array.prototype.slice.call(document.querySelectorAll('[data-translation-menu-button]')).forEach(function (button) {
       button.addEventListener('click', function () {
         var menu = button.closest('[data-translation-menu]')
+        if (!menu) {
+          return
+        }
+
         var list = menu.querySelector('[data-translation-menu-list]')
+        if (!list) {
+          return
+        }
+
         var opened = menu.getAttribute('data-open') === 'true'
 
         closeLanguageMenus()
@@ -130,7 +138,7 @@
     })
 
     document.addEventListener('click', function (event) {
-      if (!event.target.closest('[data-translation-menu]')) {
+      if (!event.target.closest || !event.target.closest('[data-translation-menu]')) {
         closeLanguageMenus()
       }
     })
