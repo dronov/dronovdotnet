@@ -92,7 +92,15 @@ spec:
 </code></pre>
 
 ### Пишем код
-Структура проекта описана в  [оригинальной статье](https://oneuptime.com/blog/post/2024-02-09-write-minimal-csi-driver-kubernetes/view). Но при сборке проекта я столкнулся с первой сложностью:
+Структура проекта описана в  [оригинальной статье](https://oneuptime.com/blog/post/2024-02-09-write-minimal-csi-driver-kubernetes/view). 
+Мой проект [тут](https://github.com/dronov/minimal-csi-driver).
+Самое интересное находится в [pkg/driver](https://github.com/dronov/minimal-csi-driver/tree/main/pkg/driver):
+
+* [identity.go](https://github.com/dronov/minimal-csi-driver/blob/main/pkg/driver/identity.go) отвечает на вопросы кубернетеса о том, как называется драйвер, какая  у него версия и работает ли он
+* [controller.go](https://github.com/dronov/minimal-csi-driver/blob/main/pkg/driver/controller.go) управляет волума. Когда создаётся PVC, метод ```CreateVolume``` создаёт описание волума и сохраняет его в памяти. При этом, как я указывал ранее, реальный диск или каталог во внешнем хранилище не создаётся. ```DeleteVolume```, соответственно, удаляет описание волума
+* [node.go](https://github.com/dronov/minimal-csi-driver/blob/main/pkg/driver/node.go) предоставляет том конкретному поду. k8s передаёт путь, куда подключать волум, а ```NodePublishVolume``` создаёт там пустой каталог, который отображаеться в поде внутри контейнера как /data
+
+Но при сборке проекта я столкнулся с первой сложностью:
 
 ```
 # github.com/kubernetes-csi/drivers/pkg/csi-common
@@ -104,6 +112,7 @@ spec:
 Оказалось, это ошибка оригинального кода из-за старого csi-common версии v1.0.0 и новой спеки CSI, где серверные интерфейсы требуют ```mustEmbedUnimplementedIdentityServer```. Пришлось поправить это, запустив gRPC сервер [явно](https://github.com/dronov/minimal-csi-driver/blob/main/cmd/driver/main.go#L62).
 
 Далее, произошло следующее:
+
 * Как оказалось, я сделал несколько опечаток в виде неверных имён ```serviceAccountName``` в driver.yaml
 * Решил не использовать ghcr.io из-за 401 при пулле образа, а заливать в kind напрямую
 * Драйвер валился с ошибкой ```invalid endpoint: only unix:// endpoints are supported```, поэтому пришлось также поправить написание сокета в коде
@@ -281,7 +290,14 @@ spec:
 </code></pre>
 
 ### Writing the code
-The project structure is described in the [original article](https://oneuptime.com/blog/post/2024-02-09-write-minimal-csi-driver-kubernetes/view). However I ran into my first issue while trying to build it:
+The project structure is described in the [original article](https://oneuptime.com/blog/post/2024-02-09-write-minimal-csi-driver-kubernetes/view). My project is available [here](https://github.com/dronov/minimal-csi-driver).
+The most interesting part is in [pkg/driver](https://github.com/dronov/minimal-csi-driver/tree/main/pkg/driver):
+
+* [identity.go](https://github.com/dronov/minimal-csi-driver/blob/main/pkg/driver/identity.go) handles Kubernetes health checks and returns the driver's name and version
+* [controller.go](https://github.com/dronov/minimal-csi-driver/blob/main/pkg/driver/controller.go) is responsible for volume management. When a PVC is created, ```CreateVolume``` generates a volume description and stores it in memory. As mentioned earlier, no actual disk or directory is created in external storage. ```DeleteVolume``` simply removes this definition
+* [node.go](https://github.com/dronov/minimal-csi-driver/blob/main/pkg/driver/node.go) makes the volume available to a specific pod. K8s passes the target path, and ```NodePublishVolume``` creates an empty directory there, which is mapped to /data inside the container
+
+However I ran into my first issue while trying to build it:
 
 ```
 # github.com/kubernetes-csi/drivers/pkg/csi-common
@@ -293,6 +309,7 @@ The project structure is described in the [original article](https://oneuptime.c
 It turned out that the original code had a compability issue with the old csi-common v1.0.0 and the newer CSI specification, where server interfaces require  ```mustEmbedUnimplementedIdentityServer```. I fixed it by starting the gRPC server [directly](https://github.com/dronov/minimal-csi-driver/blob/main/cmd/driver/main.go#L62).
 
 Then I ran into a few more issues:
+
 * I had made several typos in the ```serviceAccountName``` value in driver.yaml
 * I decided not to use ghcr.io cause pulling the image returned 401 error and I loaded the image directly into kind
 * The driver crashed with ```invalid endpoint: only unix:// endpoints are supported```, so I also fixed how the socked endpoint is defined in the code
