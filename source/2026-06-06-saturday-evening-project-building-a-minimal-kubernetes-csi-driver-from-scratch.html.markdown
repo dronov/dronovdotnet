@@ -123,35 +123,31 @@ spec:
 
 ##### Билдим бинарь
 
-```
-mkdir -p bin CGO_ENABLED=0 GOOS=linux go build -o bin/minimal-csi-driver cmd/driver/main.go
-```
+<pre><code>mkdir -p bin CGO_ENABLED=0 GOOS=linux go build -o bin/minimal-csi-driver cmd/driver/main.go
+</code></pre>
 
 ##### Собираем имейдж и заливаем в kind
 
-```
-docker build -t minimal-csi-driver:local .
+<pre><code>docker build -t minimal-csi-driver:local .
 kind load docker-image minimal-csi-driver:local --name kind
-```
+</code></pre>
 
 ##### Деплоим драйвер в kind
 
 Создадим StorageClass, PVC, Pod
 
-```
-kubectl apply -f deploy/kubernetes/rbac.yaml
+<pre><code>kubectl apply -f deploy/kubernetes/rbac.yaml
 kubectl apply -f deploy/kubernetes/driver.yaml
-```
+</code></pre>
 
 ##### Проверяем сетап драйвера
 
-```
-kubectl apply -f deploy/kubernetes/workload.yaml
+<pre><code>kubectl apply -f deploy/kubernetes/workload.yaml
 kubectl get csidriver
 kubectl get storageclass
 kubectl get pvc,pv
 kubectl get pod minimal-csi-test -o wide
-```
+</code></pre>
 
 Что хочется видеть в stdout:
 
@@ -321,35 +317,31 @@ At first, like the author of the original article, I did not consider using Ceph
 
 ##### Build the binary
 
-```
-mkdir -p bin CGO_ENABLED=0 GOOS=linux go build -o bin/minimal-csi-driver cmd/driver/main.go
-```
+<pre><code>mkdir -p bin CGO_ENABLED=0 GOOS=linux go build -o bin/minimal-csi-driver cmd/driver/main.go
+</code></pre>
 
 ##### Build the image and upload to kind
 
-```
-docker build -t minimal-csi-driver:local .
+<pre><code>docker build -t minimal-csi-driver:local .
 kind load docker-image minimal-csi-driver:local --name kind
-```
+</code></pre>
 
 ##### Deploy the driver kind
 
 Let's create a StorageClass, a PVC, and a Pod
 
-```
-kubectl apply -f deploy/kubernetes/rbac.yaml
+<pre><code>kubectl apply -f deploy/kubernetes/rbac.yaml
 kubectl apply -f deploy/kubernetes/driver.yaml
-```
+</code></pre>
 
 ##### Verify the driver installation
 
-```
-kubectl apply -f deploy/kubernetes/workload.yaml
+<pre><code>kubectl apply -f deploy/kubernetes/workload.yaml
 kubectl get csidriver
 kubectl get storageclass
 kubectl get pvc,pv
 kubectl get pod minimal-csi-test -o wide
-```
+</code></pre>
 
 What is expected to see in stdout:
 
