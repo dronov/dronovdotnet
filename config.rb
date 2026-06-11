@@ -52,6 +52,47 @@ helpers do
     end
   end
 
+  def article_content_for_language(article, language)
+    document = Nokogiri::HTML.fragment(article.body.to_s)
+    content = document.at_css(%([data-translation-content="#{language}"]))
+    return unless content
+
+    html = content.inner_html.strip
+    html unless html.empty?
+  end
+
+  def feed_article_language(article)
+    return 'en' if article_content_for_language(article, 'en')
+    return 'ru' if article_content_for_language(article, 'ru')
+
+    text = Nokogiri::HTML.fragment(article.body.to_s).text
+    latin_letters = text.scan(/[A-Za-z]/).size
+    cyrillic_letters = text.scan(/\p{Cyrillic}/).size
+
+    cyrillic_letters > latin_letters ? 'ru' : 'en'
+  end
+
+  def feed_article_title(article)
+    article_localized_title(article, feed_article_language(article))
+  end
+
+  def feed_article_content(article)
+    language = feed_article_language(article)
+    html = article_content_for_language(article, language) || article.body.to_s
+    document = Nokogiri::HTML.fragment(html)
+
+    document.css('[href], [src]').each do |element|
+      %w[href src].each do |attribute|
+        value = element[attribute].to_s.strip
+        next if value.empty? || value.start_with?('#', 'mailto:', 'tel:', 'data:')
+
+        element[attribute] = absolute_site_url(value)
+      end
+    end
+
+    document.to_html
+  end
+
   def page_language_options
     if current_article && article_translated?
       article_content_language_options
