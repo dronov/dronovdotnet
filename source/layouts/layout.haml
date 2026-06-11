@@ -4,7 +4,27 @@
     %meta{ charset: "utf-8" }
     %meta{ content: "ie=edge", "http-equiv" => "x-ua-compatible" }
     %meta{ content: "width=device-width, initial-scale=1", name: "viewport" }
-    %title= current_page.data.title || "Dronov dot net"
+    %title= social_title
+    %meta{ content: social_description, name: "description" }
+    %link{ href: canonical_url, rel: "canonical" }
+
+    %meta{ content: social_title, property: "og:title" }
+    %meta{ content: social_description, property: "og:description" }
+    %meta{ content: current_article ? "article" : "website", property: "og:type" }
+    %meta{ content: canonical_url, property: "og:url" }
+    %meta{ content: "Dronov.net", property: "og:site_name" }
+    - if social_image
+      %meta{ content: social_image, property: "og:image" }
+      %meta{ content: social_title, property: "og:image:alt" }
+
+    %meta{ content: social_image ? "summary_large_image" : "summary", name: "twitter:card" }
+    %meta{ content: social_title, name: "twitter:title" }
+    %meta{ content: social_description, name: "twitter:description" }
+    - if social_image
+      %meta{ content: social_image, name: "twitter:image" }
+
+    - if current_article && current_article.date
+      %meta{ content: current_article.date.iso8601, property: "article:published_time" }
     
     / Pico.css
     %link{ href: "https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css", rel: "stylesheet" }

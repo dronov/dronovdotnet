@@ -1,3 +1,8 @@
+require 'nokogiri'
+require 'uri'
+
+SITE_URL = 'https://www.dronov.net'.freeze
+
 activate :blog do |blog|
   blog.permalink = '{year}/{month}/{day}/{title}.html'
   blog.taglink = 'tags/{tag}.html'
@@ -65,6 +70,49 @@ helpers do
 
   def language_switcher_visible?
     article_index_page? || (current_article && article_translated?)
+  end
+
+  def social_title
+    return current_page.data.title || 'Dronov.net' unless current_article
+
+    article_localized_title(current_article, article_default_language)
+  end
+
+  def social_description
+    description = current_page.data.description.to_s.strip
+    return description unless description.empty?
+    return 'Programming, Linux and infrastructure engineering.' unless current_article
+
+    document = Nokogiri::HTML.fragment(current_article.body.to_s)
+    document.css('pre, code, script, style').remove
+    text = document.text.gsub(/\s+/, ' ').strip
+    text.length > 200 ? "#{text[0, 197].rstrip}..." : text
+  end
+
+  def social_image
+    image = current_page.data.image.to_s.strip
+    if image.empty? && current_article
+      image = Nokogiri::HTML.fragment(current_article.body.to_s).at_css('img')&.[]('src').to_s.strip
+    end
+
+    absolute_site_url(image) unless image.empty?
+  end
+
+  def canonical_url
+    absolute_site_url(current_page.url)
+  end
+
+  def absolute_site_url(path)
+    encoded_path = path.each_char.map do |character|
+      if character.ascii_only?
+        character
+      else
+        character.bytes.map { |byte| format('%%%02X', byte) }.join
+      end
+    end.join
+
+    url = URI.join("#{SITE_URL}/", encoded_path).to_s
+    url.sub(%r{\Ahttp://(?:www\.)?dronov\.net}, SITE_URL)
   end
 end
 

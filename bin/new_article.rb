@@ -43,6 +43,8 @@ content = <<~MARKDOWN
   title: #{yaml_string(title)}
   title_ru: #{yaml_string(title)}
   title_en:
+  description:
+  image:
   date: #{now.strftime('%Y-%m-%d %H:%M UTC')}
   tags:
   ---
